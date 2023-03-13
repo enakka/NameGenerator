@@ -19,7 +19,7 @@ def generate_name(text,language):
     )
     return res["choices"][0]["message"]["content"]
 language_list = ["Python", "JavaScript", "Java", "Go"]
-st.title("Namer")
+st.title("nameGenerator")
 st.header('変数名や関数名の命名 with gpt-3.5-turbo')
 selected_language = st.selectbox("言語を選択してください", language_list)
 text_input = st.text_input("変数や関数にする処理の概要を記述してください", "")
