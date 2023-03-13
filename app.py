@@ -28,18 +28,3 @@ if st.button("生成"):
     for name in names.split(","):
         st.code(name)
         
-def generate_name(text,language):
-    res = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {
-            "role": "system",
-            "content": f"Please output 10 candidates for appropriate variable or function names in English from the input Japanese. Naming conventions must follow the {language} language specification and the output must be on a single line in the format name1,name2,name3."
-        },
-        {
-            "role": "user",
-            "content": text
-        },
-    ],
-    )
-    return res["choices"][0]["message"]["content"]
